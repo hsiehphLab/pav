@@ -22,7 +22,7 @@ mkdir -p logs
 # for testing:
 #   --configfile .test/config.yaml \
 
-export SNAKEFILE="../../Snakefile"
+export SNAKEFILE="../Snakefile"
 
 # removed:
 #    --resources load=1000 \
