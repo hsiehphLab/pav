@@ -187,6 +187,8 @@ rule align_map:
         aligner=lambda wildcards: get_config(wildcards, 'aligner', 'minimap2'),
         minimap2_params=lambda wildcards: get_config(wildcards, 'minimap2_params', '-x asm20 -m 10000 -z 10000,50 -r 50000 --end-bonus=100 -O 5,56 -E 4,1 -B 5')
     threads: 24
+    resources:
+        mem_mb = 50000
     run:
 
         # Get aligner
