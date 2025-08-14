@@ -42,6 +42,8 @@ rule data_align_ref_anno_n_gap:
         ref_fa='data/ref/ref.fa.gz'
     output:
         bed='data/ref/n_gap.bed.gz'
+    resources:
+        mem_mb = 50000
     run:
 
         with gzip.open(output.bed, 'wt') as out_file:
