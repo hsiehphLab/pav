@@ -1,13 +1,14 @@
 default-resources:
-  - disk=4
-  - mem=16
-  - hrs=24
+  disk: 4
+  mem_mb: 16000
+  runtime: 86400  # 24 hours in seconds (Snakemake expects seconds)
 # old:
 #   --cpus-per-task={resources.threads}
 cluster:
   mkdir -p logs/{rule} &&
   sbatch
     --mem={resources.mem_mb}M
+    --time={resources.runtime}
     --account=hsiehph
     --partition=sioux,agsmall,aglarge
     --nodes=1
