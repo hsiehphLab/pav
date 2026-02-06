@@ -11,7 +11,7 @@ max-jobs-per-second: 5
 
 # Resources
 default-resources:
-  - mem_mb=2048
+  - mem_mb=4096
   - runtime=240
 
 set-threads:
@@ -21,6 +21,7 @@ set-threads:
   - call_merge_haplotypes_batch=12
 
 set-resources:
+  - call_merge_haplotypes_snv:mem_mb=8192
   - align_genomecov:mem_mb=4196
   - align_get_cram:mem_mb=4196
   - align_get_cram:runtime=580
